@@ -1,6 +1,4 @@
-import gleam/io
 import gleam/result
-import gleam/list
 
 pub type MathError {
   InvalidNumber
@@ -15,14 +13,4 @@ pub fn fib(n: Int) -> Result(Int, MathError) {
       })
     _ -> Error(InvalidNumber)
   }
-}
-
-pub fn main() {
-  let math_list = [0, 10, -5]
-
-  list.each(math_list, fn(x) {
-    x
-    |> fib
-    |> io.debug
-  })
 }
